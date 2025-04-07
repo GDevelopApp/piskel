@@ -59,9 +59,9 @@
     "karma-jasmine": "4.0.1",
     "karma-phantomjs-launcher": "1.0.4",
     "load-grunt-tasks": "5.1.0",
-    "nw": "0.54.0",
-    "phantomjs-prebuilt": "2.1.8",
+    "nw": "^0.98.0",
     "phantomjs-polyfill-object-assign": "0.0.2",
+    "phantomjs-prebuilt": "2.1.8",
     "promise-polyfill": "8.2.0",
     "rmdir": "1.2.0"
   },

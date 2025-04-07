@@ -1,57 +1,24 @@
-Piskel
-======
+# GDevelop's embedded Piskel
 
-[![Travis Status](https://api.travis-ci.org/piskelapp/piskel.png?branch=master)](https://travis-ci.org/piskelapp/piskel) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](https://gruntjs.com/)
+Forked from official Piskel repository to be used in GDevelop.
+As well as added features from blurymind repository's piskel-plus branch (https://github.com/blurymind/piskel/tree/piskel-plus)
 
-Piskel is an easy-to-use sprite editor. It can be used to create game sprites, animations, pixel-art...
-It is the editor used in **[piskelapp.com](https://www.piskelapp.com)**.
+## Development
 
-<img
-  src="https://screenletstore.appspot.com/img/95aaa0f0-37a4-11e7-a652-7b8128ce3e3b.png"
-  title="Piskel editor screenshot"
-  width="500">
+- `npm i`
+- `npm run dev` to start a development server (which does `grunt play`)
+- `grunt serve` to test the built package.
+- `grunt build` to build the package
 
-## About Piskel
+Useful links:
 
-### Built with
+- [wiki](https://github.com/piskelapp/piskel/wiki)
 
-The Piskel editor is purely built in **JavaScript, HTML and CSS**.
+## Update GDevelop's used version
 
-We also use the following **libraries** :
-* [spectrum](https://github.com/bgrins/spectrum) : awesome standalone colorpicker
-* [gifjs](https://jnordberg.github.io/gif.js/) : generate animated GIFs in javascript, using webworkers
-* [supergif](https://github.com/buzzfeed/libgif-js) : modified version of SuperGif to parse and import GIFs
-* [jszip](https://github.com/Stuk/jszip) : create, read and edit .zip files with Javascript
-* [canvas-toBlob](https://github.com/eligrey/canvas-toBlob.js/) : shim for canvas toBlob
-* [jquery](https://jquery.com/) : used sporadically in the application
-* [bootstrap-tooltip](https://getbootstrap.com/javascript/#tooltips) : nice tooltips
-
-As well as some **icons** from the [Noun Project](https://thenounproject.com/) :
-* Folder by Simple Icons from The Noun Project
-* (and probably one or two others)
-
-### Browser Support
-
-Piskel supports the following browsers:
-* **Chrome** (latest)
-* **Firefox** (latest)
-* **Edge** (latest)
-* **Internet Explorer** 11
-
-### Mobile/Tablets
-
-There is no support for mobile.
-
-### Offline builds
-
-Offline builds are available. More details in the [dedicated wiki page](https://github.com/piskelapp/piskel/wiki/Desktop-applications).
-
-## Contributing ?
-
-Help is always welcome !
-
-* **Issues** : Found a problem when using the application, want to request a feature, [open an issue](https://github.com/piskelapp/piskel/issues).
-* **Development** : Have a look at the [wiki](https://github.com/piskelapp/piskel/wiki) to set up the development environment
+- `grunt build` to build the package
+- copy the `dest/prod` folder into `newIDE/app/public/external/piskel/piskel-editor`
+- make a package available for the web-app too on a Github release (see `import-zipped-external-editors` command in package.json with version & hash to update)
 
 ## License
 
@@ -68,4 +35,3 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-

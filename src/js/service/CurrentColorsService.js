@@ -15,16 +15,20 @@
       this.updateCurrentColors_.bind(this),
       1000
     );
+    this.throttledLoadColorsFromCache = pskl.utils.FunctionUtils.throttle(
+      this.loadColorsFromCache_.bind(this),
+      1000
+    );
 
     this.paletteService = pskl.app.paletteService;
   };
 
   ns.CurrentColorsService.prototype.init = function () {
     $.subscribe(Events.HISTORY_STATE_SAVED, this.throttledUpdateCurrentColors_);
-    $.subscribe(Events.HISTORY_STATE_LOADED, this.loadColorsFromCache_.bind(this));
-    $.subscribe(Events.CURRENT_FRAME_CHANGED, this.updateCurrentColors_.bind(this));
-    $.subscribe(Events.CURRENT_LAYER_CHANGED, this.updateCurrentColors_.bind(this));
-    $.subscribe(Events.CURRENT_PALETTE_CHANGED, this.updateCurrentColors_.bind(this));
+    $.subscribe(Events.HISTORY_STATE_LOADED, this.throttledLoadColorsFromCache.bind(this));
+    $.subscribe(Events.CURRENT_FRAME_CHANGED, this.throttledUpdateCurrentColors_.bind(this));
+    $.subscribe(Events.CURRENT_LAYER_CHANGED, this.throttledUpdateCurrentColors_.bind(this));
+    $.subscribe(Events.CURRENT_PALETTE_CHANGED, this.throttledUpdateCurrentColors_.bind(this));
   };
 
   ns.CurrentColorsService.prototype.getCurrentColors = function () {
@@ -88,16 +92,6 @@
     return palette.id === Constants.CURRENT_COLORS_PALETTE_ID;
   };
 
-  ns.CurrentColorsService.prototype.loadColorsFromCache_ = function () {
-    var historyIndex = pskl.app.historyService.currentIndex;
-    var colors = this.cache[historyIndex];
-    if (colors) {
-      this.setCurrentColors(colors);
-    } else {
-      this.updateCurrentColors_();
-    }
-  };
-
   var batchAll = function (frames, job) {
     var batches = [];
     frames = frames.slice(0);
@@ -158,6 +152,7 @@
     var colors = this.cache[historyIndex];
     if (colors) {
       this.setCurrentColors(colors);
+      this.updateCurrentColors_();
     }
   };
 
