@@ -188,6 +188,7 @@
   "js/service/HistoryService.js",
   "js/service/color/ColorSorter.js",
   "js/service/palette/CurrentColorsPalette.js",
+  "js/service/palette/CurrentFrameColorsPalette.js",
   "js/service/palette/PaletteService.js",
   "js/service/palette/PaletteGplWriter.js",
   "js/service/palette/reader/AbstractPaletteFileReader.js",
@@ -221,6 +222,7 @@
   "js/tools/drawing/ShapeTool.js",
   "js/tools/drawing/SimplePen.js",
   "js/tools/drawing/Lighten.js",
+  "js/tools/drawing/ShiftIndex.js",
   "js/tools/drawing/VerticalMirrorPen.js",
   "js/tools/drawing/Eraser.js",
   "js/tools/drawing/Stroke.js",
@@ -242,6 +244,7 @@
   "js/tools/transform/Crop.js",
   "js/tools/transform/Flip.js",
   "js/tools/transform/Rotate.js",
+  "js/tools/transform/PaletteApply.js",
   "js/tools/transform/TransformUtils.js",
 
   // Devtools
