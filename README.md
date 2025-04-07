@@ -17,8 +17,10 @@ Useful links:
 ## Update GDevelop's used version
 
 - `grunt build` to build the package
-- copy the `dest/prod` folder into `newIDE/app/public/external/piskel/piskel-editor`
-- make a package available for the web-app too on a Github release (see `import-zipped-external-editors` command in package.json with version & hash to update)
+- zip the content of the `dest/prod` folder and rename it to `piskel-editor.zip`
+- make the zip available in an existing release on Github
+- update the `import-zipped-external-editors` command in package.json with the new version and do a `npm i`
+- note down the new folder sha and update the command
 
 ## License
 
