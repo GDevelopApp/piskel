@@ -17,10 +17,11 @@ Useful links:
 ## Update GDevelop's used version
 
 - `grunt build` to build the package
-- rename the `dest/prod` folder to `piskel-editor` and zip it as `piskel-editor.zip`
+- rename the `dest/prod` folder to `piskel-editor` and zip it as `piskel-editor.zip` with `zip -r piskel-editor.zip ./piskel-editor`
+  - Avoid desktop tools as folders like `__MACOSX` will be added to the zip if you are on macOS
 - make the zip available in an existing release on Github
-- update the `import-zipped-external-editors` command in package.json with the new version and do a `npm i`
-- note down the new folder sha and update the command
+- update the `import-zipped-external-editors` command in package.json with the new version and do a `npm run import-zipped-external-editors` to note down the sha
+- update the command with the new sha
 
 ## License
 
